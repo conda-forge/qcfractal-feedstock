@@ -1,6 +1,6 @@
 {% set name = "qcfractal" %}
-{% set version = "0.5.0rc1" %}
-{% set sha256 = "0c08b7c3b7097f75be86d77092a5dfdf31aa3e6e1818e05cddc25002e648e02a" %}
+{% set version = "0.5.0" %}
+{% set sha256 = "c3ba9019a139f08b6af00621bc082c67abbbfc3ee356979df9d70db9fa1e1e81" %}
 
 package:
   name: {{ name|lower }}
@@ -32,10 +32,10 @@ requirements:
     - requests
     - bcrypt
     - cryptography
-    - pydantic
+    - pydantic >=0.20
     - mongoengine
     - qcengine >=0.5.1
-    - qcelemental >=0.2.4
+    - qcelemental >=0.2.6
 
 test:
   requires:
