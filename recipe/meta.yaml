@@ -34,8 +34,8 @@ requirements:
     - cryptography
     - pydantic >=0.20
     - mongoengine
-    - qcengine >=0.5.1
-    - qcelemental >=0.2.6
+    - qcengine >=0.6.0
+    - qcelemental >=0.3.0
 
 test:
   requires:
