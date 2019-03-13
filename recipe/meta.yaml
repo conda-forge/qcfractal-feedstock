@@ -31,11 +31,12 @@ requirements:
     - tornado
     - requests
     - bcrypt
+    - pyyaml
     - cryptography
     - pydantic >=0.20
     - mongoengine
     - qcengine >=0.6.2
-    - qcelemental >=0.3.1
+    - qcelemental >=0.3.3
 
 test:
   requires:
