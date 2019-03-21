@@ -17,6 +17,7 @@ build:
   entry_points:
     - qcfractal-server = qcfractal.cli.qcfractal_server:main
     - qcfractal-manager = qcfractal.cli.qcfractal_manager:main
+    - qcfractal-template=qcfractal.cli.qcfractal_template_generator:main
 
 requirements:
   host:
