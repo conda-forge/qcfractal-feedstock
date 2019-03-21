@@ -1,6 +1,6 @@
 {% set name = "qcfractal" %}
-{% set version = "0.5.3" %}
-{% set sha256 = "e73fde126364aca53b5ab366b78c2164fed31dbb274baeca9e26cc6419b477a0" %}
+{% set version = "0.5.4" %}
+{% set sha256 = "32c58e2941e0f476128af98859147bdb751dbf33c64e5b1a3f67604a2f6fda92" %}
 
 package:
   name: {{ name|lower }}
@@ -17,6 +17,7 @@ build:
   entry_points:
     - qcfractal-server = qcfractal.cli.qcfractal_server:main
     - qcfractal-manager = qcfractal.cli.qcfractal_manager:main
+    - qcfractal-template=qcfractal.cli.qcfractal_template_generator:main
 
 requirements:
   host:
