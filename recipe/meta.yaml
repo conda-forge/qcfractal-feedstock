@@ -38,6 +38,7 @@ requirements:
     - mongoengine
     - qcengine >=0.6.2
     - qcelemental >=0.3.3
+    - plotly
 
 test:
   requires:
