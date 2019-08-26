@@ -1,6 +1,6 @@
 {% set name = "qcfractal" %}
-{% set version = "0.9.0" %}
-{% set sha256 = "e17ce09107af46f31f3c6fec1d0d44650f5add023e24bbad83a6f3b4d398962c" %}
+{% set version = "0.10.0" %}
+{% set sha256 = "9895f8ddb723c54c64e5921fd8e0c2541b7f03696d93be29e13e0dc4b7189f35" %}
 
 package:
   name: {{ name|lower }}
@@ -17,7 +17,6 @@ build:
   entry_points:
     - qcfractal-server = qcfractal.cli.qcfractal_server:main
     - qcfractal-manager = qcfractal.cli.qcfractal_manager:main
-    - qcfractal-template=qcfractal.cli.qcfractal_template_generator:main
     - qcfractal-dashboard=qcfractal.cli.qcfractal_dashboard:main
 
 requirements:
@@ -47,7 +46,7 @@ requirements:
     
     # QCArchive dependencies
     - qcengine >=0.9.0
-    - qcelemental >=0.6.0
+    - qcelemental >=0.7.0
     
     # Plotly and py3dmol are Portal dependencies
 
