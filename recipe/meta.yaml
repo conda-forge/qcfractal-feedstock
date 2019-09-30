@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
@@ -45,7 +45,7 @@ requirements:
     - alembic
     
     # QCArchive dependencies
-    - qcengine >=0.9.0
+    - qcengine >=0.9.0,<0.11
     - qcelemental >=0.7.0
     
     # Plotly and py3dmol are Portal dependencies
