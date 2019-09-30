@@ -34,7 +34,7 @@ requirements:
     - pyyaml >=5.1
     - cryptography
     - pydantic >=0.32.0
-    - msgpack-python>=0.6.1
+    - msgpack-python >=0.6.1
     - tqdm
 
 
