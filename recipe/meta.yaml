@@ -1,6 +1,6 @@
 {% set name = "qcfractal" %}
-{% set version = "0.10.0" %}
-{% set sha256 = "9895f8ddb723c54c64e5921fd8e0c2541b7f03696d93be29e13e0dc4b7189f35" %}
+{% set version = "0.11.0" %}
+{% set sha256 = "09bb504fda69c5333e05132ef79bddf76409fdd021ff9624223f561be1511b5f" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
@@ -45,8 +45,8 @@ requirements:
     - alembic
     
     # QCArchive dependencies
-    - qcengine >=0.9.0,<0.11
-    - qcelemental >=0.7.0
+    - qcengine >=0.11.0
+    - qcelemental >=0.9.0
     
     # Plotly and py3dmol are Portal dependencies
 
