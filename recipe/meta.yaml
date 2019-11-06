@@ -18,7 +18,11 @@ build:
     - qcfractal-server = qcfractal.cli.qcfractal_server:main
     - qcfractal-manager = qcfractal.cli.qcfractal_manager:main
 
-ouputs:
+test:
+  commands:
+    - echo 'Keep lint happy'
+
+outputs:
   - name: {{ name }}-core
     requirements:
       host:
