@@ -3,7 +3,7 @@
 {% set sha256 = "09bb504fda69c5333e05132ef79bddf76409fdd021ff9624223f561be1511b5f" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name|lower }}-split
   version: {{ version }}
 
 source:
@@ -33,7 +33,7 @@ outputs:
         - python >=3.6
     
         # Core dependencies
-        - numpy
+        - numpy >=1.11
         - msgpack-python >=0.6.1
         - tornado
         - requests
