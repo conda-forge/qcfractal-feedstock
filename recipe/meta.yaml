@@ -12,8 +12,8 @@ source:
 
 build:
   number: 0
-  noarch: python
-  script: "$PYTHON -m pip install . --no-deps -vv"
+  skip: True  # [win]
+  script: "python -m pip install . --no-deps --ignore-installed -vv "
   entry_points:
     - qcfractal-server = qcfractal.cli.qcfractal_server:main
     - qcfractal-manager = qcfractal.cli.qcfractal_manager:main
@@ -21,14 +21,14 @@ build:
 test:
   commands:
     - echo 'Keep lint happy'
+    
+requirements:
+  host:
+    - python >=3.6
+    - pip
 
 outputs:
-  - name: {{ name }}-core
-    requirements:
-      host:
-        - python >=3.6
-        - pip
-    
+  - name: {{ name }}-core    
       run:
         - python >=3.6
     
@@ -70,19 +70,11 @@ outputs:
         - qcfractal
 
   - name: {{ name }}
-    requirements:
-      host:
-        - python >=3.6
-        - pip
       run:
         - pin_subpackage({{ name }}-core, max_pin='x.x.x')
         - plotly >=4.0.0
 
   - name: {{ name }}-dashboard
-    requirements:
-      host:
-        - python >=3.6
-        - pip
       run:
         - pin_subpackage({{ name }}-core, max_pin='x.x.x')
         - dash >=1.4.1
