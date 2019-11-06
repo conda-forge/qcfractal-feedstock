@@ -1,5 +1,5 @@
-About qcfractal
-===============
+About qcfractal-split
+=====================
 
 Home: https://github.com/MolSSI/QCFractal
 
@@ -15,11 +15,50 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table>
+    
+  <tr>
+    <td>Azure</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6225&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qcfractal-feedstock?branchName=master">
-      </a>
+      <details>
+        <summary>
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6225&branchName=master">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qcfractal-feedstock?branchName=master">
+          </a>
+        </summary>
+        <table>
+          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
+          <tbody><tr>
+              <td>linux</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6225&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qcfractal-feedstock?branchName=master&jobName=linux&configuration=linux_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6225&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qcfractal-feedstock?branchName=master&jobName=osx&configuration=osx_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6225&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qcfractal-feedstock?branchName=master&jobName=win&configuration=win_" alt="variant">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+    </td>
+  </tr>
+  <tr>
+    <td>Linux_ppc64le</td>
+    <td>
+      <img src="https://img.shields.io/badge/ppc64le-disabled-lightgrey.svg" alt="ppc64le disabled">
     </td>
   </tr>
 </table>
@@ -30,20 +69,22 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-qcfractal-green.svg)](https://anaconda.org/conda-forge/qcfractal) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/qcfractal.svg)](https://anaconda.org/conda-forge/qcfractal) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/qcfractal.svg)](https://anaconda.org/conda-forge/qcfractal) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/qcfractal.svg)](https://anaconda.org/conda-forge/qcfractal) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-qcfractal--core-green.svg)](https://anaconda.org/conda-forge/qcfractal-core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/qcfractal-core.svg)](https://anaconda.org/conda-forge/qcfractal-core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/qcfractal-core.svg)](https://anaconda.org/conda-forge/qcfractal-core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/qcfractal-core.svg)](https://anaconda.org/conda-forge/qcfractal-core) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-qcfractal--dashboard-green.svg)](https://anaconda.org/conda-forge/qcfractal-dashboard) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/qcfractal-dashboard.svg)](https://anaconda.org/conda-forge/qcfractal-dashboard) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/qcfractal-dashboard.svg)](https://anaconda.org/conda-forge/qcfractal-dashboard) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/qcfractal-dashboard.svg)](https://anaconda.org/conda-forge/qcfractal-dashboard) |
 
-Installing qcfractal
-====================
+Installing qcfractal-split
+==========================
 
-Installing `qcfractal` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `qcfractal-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `qcfractal` can be installed with:
+Once the `conda-forge` channel has been enabled, `qcfractal, qcfractal-core, qcfractal-dashboard` can be installed with:
 
 ```
-conda install qcfractal
+conda install qcfractal qcfractal-core qcfractal-dashboard
 ```
 
 It is possible to list all of the versions of `qcfractal` available on your platform with:
@@ -91,17 +132,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating qcfractal-feedstock
-============================
+Updating qcfractal-split-feedstock
+==================================
 
-If you would like to improve the qcfractal recipe or build a new
+If you would like to improve the qcfractal-split recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/qcfractal-feedstock are
+Note that all branches in the conda-forge/qcfractal-split-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
