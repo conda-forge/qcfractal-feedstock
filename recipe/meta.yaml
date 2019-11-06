@@ -71,12 +71,18 @@ outputs:
 
   - name: {{ name }}
     requirements:
+      host:
+        - python >=3.6
+        - pip
       run:
         - pin_subpackage({{ name }}-core, max_pin='x.x.x')
         - plotly >=4.0.0
 
   - name: {{ name }}-dashboard
     requirements:
+      host:
+        - python >=3.6
+        - pip
       run:
         - pin_subpackage({{ name }}-core, max_pin='x.x.x')
         - dash >=1.4.1
