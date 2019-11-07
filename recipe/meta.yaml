@@ -25,7 +25,7 @@ test:
 
 outputs:
   - name: {{ name }}-core  
-    script: "python -m pip install . --no-deps --ignore-installed -vv "
+    script: install.sh
     build:
         entry_points:
           - qcfractal-server = qcfractal.cli.qcfractal_server:main
