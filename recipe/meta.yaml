@@ -12,14 +12,14 @@ source:
 
 build:
   number: 0
-  skip: True  # [win]
+  skip: True  # [win or py==38 or py==27]
     
 requirements:
   host:
-    - python >=3.6
+    - python
     - pip
   run:
-    - python >=3.6
+    - python
 
 test:
   commands:
@@ -34,10 +34,10 @@ outputs:
           - qcfractal-manager = qcfractal.cli.qcfractal_manager:main
     requirements:
       host:
-        - python >=3.6
+        - python
         - pip
       run:
-        - python >=3.6
+        - python
     
         # Core dependencies
         - numpy >=1.11
@@ -71,12 +71,12 @@ outputs:
   - name: {{ name }}
     requirements:
       host:
-        - python >=3.6
+        - python
         - pip
       run:
         - {{ pin_subpackage('qcfractal-core', max_pin='x.x.x') }}
         - plotly >=4.0.0
-        - python >=3.6
+        - python
     test:
       requires:
         - pytest
@@ -85,16 +85,16 @@ outputs:
       imports:
         - qcfractal
 
-  #- name: {{ name }}-dashboard
-  #  requirements:
-  #    host:
-  #      - python >=3.6
-  #      - pip
-  #    run:
-  #      - {{ pin_subpackage('qcfractal-core', max_pin='x.x.x') }}
-  #      - dash >=1.4.1
-  #      - dash_bootstrap_components >=0.7.2
-  #      - python >=3.6
+  - name: {{ name }}-dashboard
+    requirements:
+      host:
+        - python
+        - pip
+      run:
+        - {{ pin_subpackage('qcfractal-core', max_pin='x.x.x') }}
+        - dash >=1.4.1
+        - dash_bootstrap_components >=0.7.2
+        - python
 
 about:
   home: https://github.com/MolSSI/QCFractal
