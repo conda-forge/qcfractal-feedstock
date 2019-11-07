@@ -17,18 +17,19 @@ build:
   entry_points:
     - qcfractal-server = qcfractal.cli.qcfractal_server:main
     - qcfractal-manager = qcfractal.cli.qcfractal_manager:main
-
-test:
-  commands:
-    - echo 'Keep lint happy'
     
 requirements:
   host:
     - python >=3.6
     - pip
 
+test:
+  commands:
+    - echo 'Keep lint happy'
+
 outputs:
   - name: {{ name }}-core    
+    requirements:
       run:
         - python >=3.6
     
@@ -70,11 +71,13 @@ outputs:
         - qcfractal
 
   - name: {{ name }}
+    requirements:
       run:
         - pin_subpackage({{ name }}-core, max_pin='x.x.x')
         - plotly >=4.0.0
 
   - name: {{ name }}-dashboard
+    requirements:
       run:
         - pin_subpackage({{ name }}-core, max_pin='x.x.x')
         - dash >=1.4.1
