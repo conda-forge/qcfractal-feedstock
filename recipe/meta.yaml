@@ -31,6 +31,9 @@ outputs:
           - qcfractal-server = qcfractal.cli.qcfractal_server:main
           - qcfractal-manager = qcfractal.cli.qcfractal_manager:main
     requirements:
+      host:
+        - python >=3.6
+        - pip
       run:
         - python >=3.6
     
@@ -73,12 +76,18 @@ outputs:
 
   - name: {{ name }}
     requirements:
+      host:
+        - python >=3.6
+        - pip
       run:
         - pin_subpackage({{ name }}-core, max_pin='x.x.x')
         - plotly >=4.0.0
 
   - name: {{ name }}-dashboard
     requirements:
+      host:
+        - python >=3.6
+        - pip
       run:
         - pin_subpackage({{ name }}-core, max_pin='x.x.x')
         - dash >=1.4.1
