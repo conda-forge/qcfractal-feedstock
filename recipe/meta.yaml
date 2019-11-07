@@ -13,10 +13,6 @@ source:
 build:
   number: 0
   skip: True  # [win]
-  script: "python -m pip install . --no-deps --ignore-installed -vv "
-  entry_points:
-    - qcfractal-server = qcfractal.cli.qcfractal_server:main
-    - qcfractal-manager = qcfractal.cli.qcfractal_manager:main
     
 requirements:
   host:
@@ -29,6 +25,11 @@ test:
 
 outputs:
   - name: {{ name }}-core    
+    build:
+        script: "python -m pip install . --no-deps --ignore-installed -vv "
+        entry_points:
+          - qcfractal-server = qcfractal.cli.qcfractal_server:main
+          - qcfractal-manager = qcfractal.cli.qcfractal_manager:main
     requirements:
       run:
         - python >=3.6
