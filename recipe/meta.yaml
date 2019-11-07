@@ -24,9 +24,9 @@ test:
     - echo 'Keep lint happy'
 
 outputs:
-  - name: {{ name }}-core    
+  - name: {{ name }}-core  
+    script: "python -m pip install . --no-deps --ignore-installed -vv "
     build:
-        script: "python -m pip install . --no-deps --ignore-installed -vv "
         entry_points:
           - qcfractal-server = qcfractal.cli.qcfractal_server:main
           - qcfractal-manager = qcfractal.cli.qcfractal_manager:main
