@@ -49,7 +49,7 @@ outputs:
     
         # Ecosystem dependencies
         - qcengine >=0.11.0
-        - qcelemental >=0.11.0
+        - qcelemental >=0.11.0,<0.12.0
       
         # Security dependencies
         - bcrypt
