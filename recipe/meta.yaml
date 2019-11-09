@@ -1,6 +1,6 @@
 {% set name = "qcfractal" %}
-{% set version = "0.12.0" %}
-{% set sha256 = "78e5953420d6cc10abedd2c5ed9f529763f21870051b1e27b0841fd0ba6ed340" %}
+{% set version = "0.12.1" %}
+{% set sha256 = "5a7e7e87cc61348be6f2797c11d0d6040afaf89710e8f3181648e02435300fa6" %}
 
 package:
   name: {{ name|lower }}-split
@@ -49,7 +49,7 @@ outputs:
     
         # Ecosystem dependencies
         - qcengine >=0.11.0
-        - qcelemental >=0.11.0
+        - qcelemental >=0.11.0,<0.12.0
       
         # Security dependencies
         - bcrypt
