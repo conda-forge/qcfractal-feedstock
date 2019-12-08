@@ -1,6 +1,6 @@
 {% set name = "qcfractal" %}
-{% set version = "0.12.1" %}
-{% set sha256 = "5a7e7e87cc61348be6f2797c11d0d6040afaf89710e8f3181648e02435300fa6" %}
+{% set version = "0.12.2" %}
+{% set sha256 = "abcc83cce8f205268161b65873f9f5c302c9968c6b4ca38c89602481155f6703" %}
 
 package:
   name: {{ name|lower }}-split
