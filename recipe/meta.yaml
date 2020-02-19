@@ -45,11 +45,11 @@ outputs:
         - tornado
         - requests
         - pyyaml >=5.1
-        - pydantic >=1.0.0
+        - pydantic >=1.4.0
     
         # Ecosystem dependencies
         - qcengine >=0.11.0
-        - qcelemental >=0.12.0
+        - qcelemental >=0.13.1
       
         # Security dependencies
         - bcrypt
@@ -114,3 +114,4 @@ extra:
     recipe-maintainers:
         - dgasmith
         - lnaden
+        - mattwelborn
