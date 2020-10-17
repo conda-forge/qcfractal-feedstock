@@ -3,13 +3,15 @@ About qcfractal-split
 
 Home: https://github.com/MolSSI/QCFractal
 
-Package license: BSD-3-Clause
+Package license: [BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause)
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/qcfractal-feedstock/blob/master/LICENSE.txt)
 
 Summary: A distributed compute and database platform for quantum chemistry.
 
+Development: https://github.com/MolSSI/QCFractal
 
+Documentation: https://qcfractal.readthedocs.io/en/latest/
 
 Current build status
 ====================
@@ -43,6 +45,13 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+              <td>linux_64_python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6225&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qcfractal-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
               <td>osx_64_python3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6225&branchName=master">
@@ -54,6 +63,13 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6225&branchName=master">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qcfractal-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.7.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6225&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qcfractal-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr>
@@ -71,7 +87,6 @@ Current release info
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-qcfractal-green.svg)](https://anaconda.org/conda-forge/qcfractal) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/qcfractal.svg)](https://anaconda.org/conda-forge/qcfractal) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/qcfractal.svg)](https://anaconda.org/conda-forge/qcfractal) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/qcfractal.svg)](https://anaconda.org/conda-forge/qcfractal) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-qcfractal--core-green.svg)](https://anaconda.org/conda-forge/qcfractal-core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/qcfractal-core.svg)](https://anaconda.org/conda-forge/qcfractal-core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/qcfractal-core.svg)](https://anaconda.org/conda-forge/qcfractal-core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/qcfractal-core.svg)](https://anaconda.org/conda-forge/qcfractal-core) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-qcfractal--dashboard-green.svg)](https://anaconda.org/conda-forge/qcfractal-dashboard) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/qcfractal-dashboard.svg)](https://anaconda.org/conda-forge/qcfractal-dashboard) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/qcfractal-dashboard.svg)](https://anaconda.org/conda-forge/qcfractal-dashboard) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/qcfractal-dashboard.svg)](https://anaconda.org/conda-forge/qcfractal-dashboard) |
 
 Installing qcfractal-split
 ==========================
@@ -82,10 +97,10 @@ Installing `qcfractal-split` from the `conda-forge` channel can be achieved by a
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `qcfractal, qcfractal-core, qcfractal-dashboard` can be installed with:
+Once the `conda-forge` channel has been enabled, `qcfractal, qcfractal-core` can be installed with:
 
 ```
-conda install qcfractal qcfractal-core qcfractal-dashboard
+conda install qcfractal qcfractal-core
 ```
 
 It is possible to list all of the versions of `qcfractal` available on your platform with:
