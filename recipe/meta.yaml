@@ -12,7 +12,7 @@ source:
 
 build:
   number: 1
-  skip: true  # [win or py==38 or py==27]
+  skip: true  # [win or py<37]
 
 requirements:
   host:
