@@ -11,15 +11,15 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
-  skip: true  # [win or py==38 or py==27]
+  number: 1
+  skip: true  # [win or py<37]
 
 requirements:
   host:
     - python
     - pip
   run:
-    - python
+    - python >=3.7
 
 test:
   commands:
@@ -37,10 +37,10 @@ outputs:
         - python
         - pip
       run:
-        - python
+        - python >=3.7
 
         # Core dependencies
-        - numpy >=1.11
+        - numpy >=1.17
         - msgpack-python >=0.6.1
         - tornado
         - requests
@@ -79,7 +79,7 @@ outputs:
       run:
         - {{ pin_subpackage('qcfractal-core', max_pin='x.x.x') }}
         - plotly >=4.0.0
-        - python
+        - python >=3.7
     test:
       imports:
         - qcfractal
