@@ -11,15 +11,15 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
-  skip: true  # [win or py<37]
+  number: 1
+  skip: true  # [win]
 
 requirements:
   host:
     - python
     - pip
   run:
-    - python >=3.7
+    - python
 
 test:
   commands:
@@ -37,7 +37,7 @@ outputs:
         - python
         - pip
       run:
-        - python >=3.7
+        - python
 
         # Core dependencies
         - numpy >=1.17
