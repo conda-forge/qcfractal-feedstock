@@ -1,11 +1,11 @@
-About qcfractal-split
-=====================
+About qcfractal-split-feedstock
+===============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/qcfractal-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/MolSSI/QCFractal
 
 Package license: [BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause)
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/qcfractal-feedstock/blob/main/LICENSE.txt)
 
 Summary: A distributed compute and database platform for quantum chemistry.
 
