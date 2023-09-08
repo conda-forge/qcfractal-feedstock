@@ -1,101 +1,177 @@
 {% set name = "qcfractal" %}
-{% set version = "0.15.8.1" %}
-{% set sha256 = "89b85447df2b27e6ba6898a8cd226b5d8fbca026af97f3f3a057af580762f803" %}
+{% set version = "0.50b13.post36+gf2f55923" %}
+{% set sha256 = "ab78d13d081ef355c40089e90512ae694ff9c50f5a7cefd480424f18c6f22573" %}
 
 package:
   name: {{ name|lower }}-split
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  git_url: git@github.com:MolSSI/QCFractal.git
+  git_tag: f2f55923  # loriab-patch-2
+  #git_tag: eeb136b2  # next
+  #url: https://github.com/MolSSI/QCFractal/archive/v{{ version }}.tar.gz
+  #url: https://github.com/MolSSI/QCFractal/archive/eeb136b.tar.gz
+  #sha256: {{ sha256 }}
 
 build:
-  number: 1
-  skip: true  # [win or py<37]
+  number: 0
+  noarch: python
 
-requirements:
-  host:
-    - python
-    - pip
-  run:
-    - python >=3.7
-
-test:
-  commands:
-    - echo 'Keep lint happy'
+#test:
+#  commands:
+#    - echo 'Keep lint happy'
 
 outputs:
-  - name: {{ name }}-core
-    script: install.sh
+  - name: qcportal
     build:
-      entry_points:
-        - qcfractal-server = qcfractal.cli.qcfractal_server:main
-        - qcfractal-manager = qcfractal.cli.qcfractal_manager:main
+      script: python -m pip install --no-deps -vv ./qcportal
     requirements:
       host:
-        - python
+        - python >=3.8
+        - setuptools >=61.0
+        - versioningit
         - pip
       run:
-        - python >=3.7
-
-        # Core dependencies
-        - numpy >=1.17
-        - msgpack-python >=0.6.1
-        - tornado
+        - numpy
+        - msgpack-python
         - requests
-        - pyyaml >=5.1
-        - pydantic >=1.4.0
-
-        # Ecosystem dependencies
-        - qcengine >=0.22
-        - qcelemental >=0.24
-
-        # Security dependencies
-        - bcrypt
-        - cryptography
-
-        # Storage dependencies
-        - sqlalchemy >=1.3,<1.4
-        - alembic
-        - psycopg2 >=2.7
-        - postgresql
-
-        # QCPortal dependencies
+        - pyyaml
+        - pydantic <2.0
+        - zstandard
+        - qcelemental
+        - tabulate
         - tqdm
         - pandas
-        - h5py
-        - pyarrow >=0.15.0
-        - double-conversion >=3.0.0
+        - pyjwt  # new added
     test:
       imports:
-        - qcfractal
+        - qcportal
+      requires:
+        - pip
+        - pytest
+      commands:
+        # - ls -l $SP_DIR/qcportal
+        - test -f $SP_DIR/qcportal/__init__.py
+        - pip check
+        - python -c "import qcportal as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\'{{ version }}\''"
+        # - pytest -v -rws --color yes $SP_DIR/qcportal
+    about:
+      summary: Python library for interacting with QCArchive/QCFractal servers
 
-  - name: {{ name }}
+  - name: qcfractalcompute
+    build:
+      script: python -m pip install --no-deps -vv ./qcfractalcompute
     requirements:
       host:
-        - python
+        - python >=3.8
+        - setuptools >=61.0
+        - versioningit
         - pip
       run:
-        - {{ pin_subpackage('qcfractal-core', max_pin='x.x.x') }}
-        - plotly >=4.0.0
-        - python >=3.7
+        - qcportal ={{ version }}
+        - qcengine
+        - parsl
     test:
       imports:
-        - qcfractal
+        - qcfractalcompute
+      requires:
+        - pip
+        - pytest
+      commands:
+        # - ls -l $SP_DIR/qcfractalcompute
+        - test -f $SP_DIR/qcfractalcompute/__init__.py
+        - pip check
+        - python -c "import qcfractalcompute as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\'{{ version }}\''"
+        # - pytest -v -rws --color yes $SP_DIR/qcfractalcompute
+        - qcfractal-compute-manager --help
+    about:
+      summary: Distributed worker package for QCArchive
+
+  - name: qcfractal
+    build:
+      script: python -m pip install --no-deps -vv ./qcfractal
+    requirements:
+      host:
+        - pip
+        - python >=3.8
+        - setuptools >=61.0
+        - versioningit
+      run:
+        - qcfractalcompute ={{ version }}
+        - flask
+        - flask-jwt-extended
+        - gunicorn
+        - bcrypt
+        # Storage dependencies
+        - sqlalchemy >=2.0
+        - alembic
+        - psycopg2
+        # For access logging. remainder are unspecified geoip2 deps
+        - geoip2
+        - maxminddb
+        - aiohttp
+        - urllib3 <2.0
+    test:
+      imports:
+        - qcfractal.snowflake
+      requires:
+        - pip
+        - pytest
+      commands:
+        # - ls -l $SP_DIR/qcfractal
+        - test -f $SP_DIR/qcfractal/__init__.py
+        - pip check
+        - python -c "import qcfractal as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\'{{ version }}\''"
+        # - pytest -v -rws --color yes $SP_DIR/qcfractal
+        - qcfractal-server --help
+    about:
+      summary: Server for the QCArchive project
+
+  - name: qcarchivetesting
+    build:
+      script: python -m pip install --no-deps -vv ./qcarchivetesting
+    requirements:
+      host:
+        - pip
+        - python >=3.8
+        - setuptools >=61.0
+        - versioningit
+      run:
+        - qcfractal ={{ version }}
+        - pytest  # from pyproject
+        - pytest-cov  # from pyproject
+        - codecov  # from pyproject
+        - aiohttp
+        - urllib3 <2.0
+    test:
+      imports:
+        - qcarchivetesting.helpers
+      requires:
+        - pip
+        - pytest
+      commands:
+        # - ls -l $SP_DIR/qcarchivetesting
+        - test -f $SP_DIR/qcarchivetesting/__init__.py
+        - pip check
+        # NOT VERSIONED - python -c "import qcarchivetesting as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\'{{ version }}\''"
+        # - pytest -v -rws --color yes $SP_DIR/qcarchivetesting
+    about:
+      summary: Additional testing fixtures and functions for the QCArchive project
 
 about:
   home: https://github.com/MolSSI/QCFractal
   dev_url: https://github.com/MolSSI/QCFractal
-  doc_url: https://qcfractal.readthedocs.io/en/latest/
-  doc_source_url: https://github.com/MolSSI/QCFractal/blob/master/docs/source/index.rst
+  doc_url: https://molssi.github.io/QCFractal/
+  # doc_source_url: https://github.com/MolSSI/QCFractal/blob/master/docs/source/index.rst
   license: BSD-3-Clause
-  license_url: https://opensource.org/licenses/BSD-3-Clause
+  license_url: https://opensource.org/license/bsd-3-clause/
   license_file: LICENSE
   license_family: BSD
   summary: A distributed compute and database platform for quantum chemistry.
 
 extra:
+  feedstock-name: qcfractal
   recipe-maintainers:
     - lnaden
     - bennybp
