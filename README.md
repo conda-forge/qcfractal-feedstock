@@ -1,17 +1,57 @@
-About qcfractal-split-feedstock
-===============================
+About qcfractal-feedstock
+=========================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/qcfractal-feedstock/blob/main/LICENSE.txt)
 
+
+About qcfractal
+---------------
+
 Home: https://github.com/MolSSI/QCFractal
 
-Package license: [BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause)
+Package license: [BSD-3-Clause](https://opensource.org/license/bsd-3-clause/)
 
 Summary: A distributed compute and database platform for quantum chemistry.
 
 Development: https://github.com/MolSSI/QCFractal
 
-Documentation: https://qcfractal.readthedocs.io/en/latest/
+Documentation: https://molssi.github.io/QCFractal/
+
+About qcportal
+--------------
+
+
+
+Package license: 
+
+Summary: Python library for interacting with QCArchive/QCFractal servers
+
+About qcfractalcompute
+----------------------
+
+
+
+Package license: 
+
+Summary: Distributed worker package for QCArchive
+
+About qcfractal
+---------------
+
+
+
+Package license: 
+
+Summary: Server for the QCArchive project
+
+About qcarchivetesting
+----------------------
+
+
+
+Package license: 
+
+Summary: Additional testing fixtures and functions for the QCArchive project
 
 Current build status
 ====================
@@ -31,45 +71,24 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_python3.10.____cpython</td>
+              <td>linux_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6225&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qcfractal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.10.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qcfractal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_python3.8.____cpython</td>
+              <td>osx_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6225&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qcfractal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.8.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qcfractal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_python3.9.____cpython</td>
+              <td>win_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6225&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qcfractal-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.9.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.10.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6225&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qcfractal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.10.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.8.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6225&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qcfractal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6225&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qcfractal-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.9.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/qcfractal-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
                 </a>
               </td>
             </tr>
@@ -85,54 +104,56 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-qcarchivetesting-green.svg)](https://anaconda.org/conda-forge/qcarchivetesting) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/qcarchivetesting.svg)](https://anaconda.org/conda-forge/qcarchivetesting) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/qcarchivetesting.svg)](https://anaconda.org/conda-forge/qcarchivetesting) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/qcarchivetesting.svg)](https://anaconda.org/conda-forge/qcarchivetesting) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-qcfractal-green.svg)](https://anaconda.org/conda-forge/qcfractal) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/qcfractal.svg)](https://anaconda.org/conda-forge/qcfractal) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/qcfractal.svg)](https://anaconda.org/conda-forge/qcfractal) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/qcfractal.svg)](https://anaconda.org/conda-forge/qcfractal) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-qcfractal--core-green.svg)](https://anaconda.org/conda-forge/qcfractal-core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/qcfractal-core.svg)](https://anaconda.org/conda-forge/qcfractal-core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/qcfractal-core.svg)](https://anaconda.org/conda-forge/qcfractal-core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/qcfractal-core.svg)](https://anaconda.org/conda-forge/qcfractal-core) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-qcfractalcompute-green.svg)](https://anaconda.org/conda-forge/qcfractalcompute) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/qcfractalcompute.svg)](https://anaconda.org/conda-forge/qcfractalcompute) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/qcfractalcompute.svg)](https://anaconda.org/conda-forge/qcfractalcompute) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/qcfractalcompute.svg)](https://anaconda.org/conda-forge/qcfractalcompute) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-qcportal-green.svg)](https://anaconda.org/conda-forge/qcportal) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/qcportal.svg)](https://anaconda.org/conda-forge/qcportal) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/qcportal.svg)](https://anaconda.org/conda-forge/qcportal) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/qcportal.svg)](https://anaconda.org/conda-forge/qcportal) |
 
-Installing qcfractal-split
-==========================
+Installing qcfractal
+====================
 
-Installing `qcfractal-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `qcfractal` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `qcfractal, qcfractal-core` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `qcarchivetesting, qcfractal, qcfractalcompute, qcportal` can be installed with `conda`:
 
 ```
-conda install qcfractal qcfractal-core
-```
-
-or with `mamba`:
-
-```
-mamba install qcfractal qcfractal-core
-```
-
-It is possible to list all of the versions of `qcfractal` available on your platform with `conda`:
-
-```
-conda search qcfractal --channel conda-forge
+conda install qcarchivetesting qcfractal qcfractalcompute qcportal
 ```
 
 or with `mamba`:
 
 ```
-mamba search qcfractal --channel conda-forge
+mamba install qcarchivetesting qcfractal qcfractalcompute qcportal
+```
+
+It is possible to list all of the versions of `qcarchivetesting` available on your platform with `conda`:
+
+```
+conda search qcarchivetesting --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search qcarchivetesting --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search qcfractal --channel conda-forge
+mamba repoquery search qcarchivetesting --channel conda-forge
 
-# List packages depending on `qcfractal`:
-mamba repoquery whoneeds qcfractal --channel conda-forge
+# List packages depending on `qcarchivetesting`:
+mamba repoquery whoneeds qcarchivetesting --channel conda-forge
 
-# List dependencies of `qcfractal`:
-mamba repoquery depends qcfractal --channel conda-forge
+# List dependencies of `qcarchivetesting`:
+mamba repoquery depends qcarchivetesting --channel conda-forge
 ```
 
 
@@ -177,17 +198,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating qcfractal-split-feedstock
-==================================
+Updating qcfractal-feedstock
+============================
 
-If you would like to improve the qcfractal-split recipe or build a new
+If you would like to improve the qcfractal recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/qcfractal-split-feedstock are
+Note that all branches in the conda-forge/qcfractal-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
