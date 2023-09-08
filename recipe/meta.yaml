@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  git_url: git@github.com:MolSSI/QCFractal.git
-  git_tag: f2f55923  # loriab-patch-2
+  git_url: https://github.com/MolSSI/QCFractal.git
+  git_rev: f2f55923  # loriab-patch-2
   #git_tag: eeb136b2  # next
   #url: https://github.com/MolSSI/QCFractal/archive/v{{ version }}.tar.gz
   #url: https://github.com/MolSSI/QCFractal/archive/eeb136b.tar.gz
@@ -25,6 +25,7 @@ build:
 outputs:
   - name: qcportal
     build:
+      noarch: python
       script: python -m pip install --no-deps -vv ./qcportal
     requirements:
       host:
@@ -61,6 +62,7 @@ outputs:
 
   - name: qcfractalcompute
     build:
+      noarch: python
       script: python -m pip install --no-deps -vv ./qcfractalcompute
     requirements:
       host:
@@ -90,6 +92,7 @@ outputs:
 
   - name: qcfractal
     build:
+      noarch: python
       script: python -m pip install --no-deps -vv ./qcfractal
     requirements:
       host:
@@ -130,6 +133,7 @@ outputs:
 
   - name: qcarchivetesting
     build:
+      noarch: python
       script: python -m pip install --no-deps -vv ./qcarchivetesting
     requirements:
       host:
