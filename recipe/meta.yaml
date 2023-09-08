@@ -1,6 +1,6 @@
 {% set name = "qcfractal" %}
-{% set version = "0.50b13.post36+gf2f55923" %}
-{% set sha256 = "ab78d13d081ef355c40089e90512ae694ff9c50f5a7cefd480424f18c6f22573" %}
+{% set version = "0.50b13.post43+g77527808" %}
+{% set sha256 = "d8b15df14fdf3c0fb7f37baae0f81388738fdf344a0fe029b2139c8b6e2f9605" %}
 
 package:
   name: {{ name|lower }}-split
@@ -8,19 +8,13 @@ package:
 
 source:
   git_url: https://github.com/MolSSI/QCFractal.git
-  git_rev: f2f55923  # loriab-patch-2
-  #git_tag: eeb136b2  # next
+  git_ref: 77527808  # next
   #url: https://github.com/MolSSI/QCFractal/archive/v{{ version }}.tar.gz
-  #url: https://github.com/MolSSI/QCFractal/archive/eeb136b.tar.gz
-  #sha256: {{ sha256 }}
+  sha256: {{ sha256 }}
 
 build:
   number: 0
   noarch: python
-
-#test:
-#  commands:
-#    - echo 'Keep lint happy'
 
 outputs:
   - name: qcportal
@@ -44,7 +38,7 @@ outputs:
         - tabulate
         - tqdm
         - pandas
-        - pyjwt  # new added
+        - pyjwt
     test:
       imports:
         - qcportal
@@ -52,7 +46,6 @@ outputs:
         - pip
         - pytest
       commands:
-        # - ls -l $SP_DIR/qcportal
         - test -f $SP_DIR/qcportal/__init__.py
         - pip check
         - python -c "import qcportal as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\'{{ version }}\''"
@@ -81,7 +74,6 @@ outputs:
         - pip
         - pytest
       commands:
-        # - ls -l $SP_DIR/qcfractalcompute
         - test -f $SP_DIR/qcfractalcompute/__init__.py
         - pip check
         - python -c "import qcfractalcompute as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\'{{ version }}\''"
@@ -110,11 +102,6 @@ outputs:
         - sqlalchemy >=2.0
         - alembic
         - psycopg2
-        # For access logging. remainder are unspecified geoip2 deps
-        - geoip2
-        - maxminddb
-        - aiohttp
-        - urllib3 <2.0
     test:
       imports:
         - qcfractal.snowflake
@@ -122,7 +109,6 @@ outputs:
         - pip
         - pytest
       commands:
-        # - ls -l $SP_DIR/qcfractal
         - test -f $SP_DIR/qcfractal/__init__.py
         - pip check
         - python -c "import qcfractal as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\'{{ version }}\''"
@@ -146,8 +132,7 @@ outputs:
         - pytest  # from pyproject
         - pytest-cov  # from pyproject
         - codecov  # from pyproject
-        - aiohttp
-        - urllib3 <2.0
+        - geoip2
     test:
       imports:
         - qcarchivetesting.helpers
@@ -155,7 +140,6 @@ outputs:
         - pip
         - pytest
       commands:
-        # - ls -l $SP_DIR/qcarchivetesting
         - test -f $SP_DIR/qcarchivetesting/__init__.py
         - pip check
         # NOT VERSIONED - python -c "import qcarchivetesting as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\'{{ version }}\''"
