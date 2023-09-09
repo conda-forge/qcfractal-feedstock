@@ -32,7 +32,7 @@ outputs:
   - name: qcportal
     build:
       noarch: python
-      script: {{ PYTHON }} -m pip install --no-deps -vv ./qcportal
+      script: python -m pip install --no-deps -vv ./qcportal
     requirements:
       host:
         - python >=3.8
@@ -68,7 +68,7 @@ outputs:
   - name: qcfractalcompute
     build:
       noarch: python
-      script: {{ PYTHON }} -m pip install --no-deps -vv ./qcfractalcompute
+      script: python -m pip install --no-deps -vv ./qcfractalcompute
     requirements:
       host:
         - python >=3.8
@@ -97,7 +97,7 @@ outputs:
   - name: qcfractal
     build:
       noarch: python
-      script: {{ PYTHON }} -m pip install --no-deps -vv ./qcfractal
+      script: python -m pip install --no-deps -vv ./qcfractal
     requirements:
       host:
         - pip
@@ -133,7 +133,7 @@ outputs:
   - name: qcarchivetesting
     build:
       noarch: python
-      script: {{ PYTHON }} -m pip install --no-deps -vv ./qcarchivetesting
+      script: python -m pip install --no-deps -vv ./qcarchivetesting
     requirements:
       host:
         - pip
