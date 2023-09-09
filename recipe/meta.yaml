@@ -1,16 +1,28 @@
 {% set name = "qcfractal" %}
 {% set version = "0.50b13.post43+g77527808" %}
-{% set sha256 = "d8b15df14fdf3c0fb7f37baae0f81388738fdf344a0fe029b2139c8b6e2f9605" %}
 
 package:
   name: {{ name|lower }}-split
   version: {{ version }}
 
 source:
+  # unpublished - any repo commit. sync commit in git_rev below with commit and distance in version above
   git_url: https://github.com/MolSSI/QCFractal.git
-  git_rev: 77527808  # next
-  #url: https://github.com/MolSSI/QCFractal/archive/v{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  git_rev: 77527808
+  sha256: d8b15df14fdf3c0fb7f37baae0f81388738fdf344a0fe029b2139c8b6e2f9605
+  # published tags.
+  #- url: https://pypi.io/packages/source/q/qcportal/qcportal-{{ version }}.tar.gz
+  #  sha256: TBA
+  #  folder: qcportal
+  #- url: https://pypi.io/packages/source/q/qcfractalcompute/qcfractalcompute-{{ version }}.tar.gz
+  #  sha256: TBA
+  #  folder: qcfractalcompute
+  #- url: https://pypi.io/packages/source/q/qcfractal/qcfractal-{{ version }}.tar.gz
+  #  sha256: TBA
+  #  folder: qcfractal
+  #- url: https://pypi.io/packages/source/q/qcarchivetesting/qcarchivetesting-{{ version }}.tar.gz
+  #  sha256: TBA
+  #  folder: qcarchivetesting
 
 build:
   number: 0
@@ -20,7 +32,7 @@ outputs:
   - name: qcportal
     build:
       noarch: python
-      script: python -m pip install --no-deps -vv ./qcportal
+      script: {{ PYTHON }} -m pip install --no-deps -vv ./qcportal
     requirements:
       host:
         - python >=3.8
@@ -56,7 +68,7 @@ outputs:
   - name: qcfractalcompute
     build:
       noarch: python
-      script: python -m pip install --no-deps -vv ./qcfractalcompute
+      script: {{ PYTHON }} -m pip install --no-deps -vv ./qcfractalcompute
     requirements:
       host:
         - python >=3.8
@@ -85,7 +97,7 @@ outputs:
   - name: qcfractal
     build:
       noarch: python
-      script: python -m pip install --no-deps -vv ./qcfractal
+      script: {{ PYTHON }} -m pip install --no-deps -vv ./qcfractal
     requirements:
       host:
         - pip
@@ -102,6 +114,7 @@ outputs:
         - sqlalchemy >=2.0
         - alembic
         - psycopg2
+        - __unix  # [unix]
     test:
       imports:
         - qcfractal.snowflake
@@ -120,7 +133,7 @@ outputs:
   - name: qcarchivetesting
     build:
       noarch: python
-      script: python -m pip install --no-deps -vv ./qcarchivetesting
+      script: {{ PYTHON }} -m pip install --no-deps -vv ./qcarchivetesting
     requirements:
       host:
         - pip
@@ -133,6 +146,7 @@ outputs:
         - pytest-cov  # from pyproject
         - codecov  # from pyproject
         - geoip2
+        - __unix  # [unix]
     test:
       imports:
         - qcarchivetesting.helpers
