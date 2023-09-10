@@ -1,5 +1,5 @@
 {% set name = "qcfractal" %}
-{% set version = "0.50b13.post43+g77527808" %}
+{% set version = "0.50b13.post52+gbb2748c85" %}
 
 package:
   name: {{ name|lower }}-split
@@ -8,8 +8,8 @@ package:
 source:
   # unpublished - any repo commit. sync commit in git_rev below with commit and distance in version above
   git_url: https://github.com/MolSSI/QCFractal.git
-  git_rev: 77527808
-  sha256: d8b15df14fdf3c0fb7f37baae0f81388738fdf344a0fe029b2139c8b6e2f9605
+  git_rev: bb2748c8534b267e33f894ef71a2d9a6da50c5af
+  sha256: 81cdc093dda5e7739496088b70be7c3110fb691b4fdf22c7e3b58377450e2081
   # published tags.
   #- url: https://pypi.io/packages/source/q/qcportal/qcportal-{{ version }}.tar.gz
   #  sha256: TBA
