@@ -1,5 +1,5 @@
 {% set name = "qcfractal" %}
-{% set version = "0.50b13.post52+gbb2748c85" %}
+{% set version = "0.50b13.post52+gbb2748c8" %}
 
 package:
   name: {{ name|lower }}-split
