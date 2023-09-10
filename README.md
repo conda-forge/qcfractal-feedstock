@@ -42,7 +42,7 @@ About qcfractal
 
 Package license: 
 
-Summary: Server for the QCArchive project
+Summary: Database and Web API for the QCArchive project
 
 About qcarchivetesting
 ----------------------
