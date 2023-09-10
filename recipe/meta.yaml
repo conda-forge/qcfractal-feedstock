@@ -148,8 +148,7 @@ outputs:
       commands:
         - test -f $SP_DIR/qcarchivetesting/__init__.py
         - pip check
-        # NOT VERSIONED - python -c "import qcarchivetesting as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\'{{ version }}\''"
-        # - pytest -v -rws --color yes $SP_DIR/qcarchivetesting
+        - python -c "import qcarchivetesting as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\'{{ version }}\''"
     about:
       summary: Additional testing fixtures and functions for the QCArchive project
 
