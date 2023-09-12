@@ -13,16 +13,16 @@ source:
   #sha256: 81cdc093dda5e7739496088b70be7c3110fb691b4fdf22c7e3b58377450e2081
   # published tags.
   - url: https://pypi.io/packages/source/q/qcportal/qcportal-{{ version }}.tar.gz
-    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    sha256: 3ef280e9225831d8021bc33c77158bb633b34bfb82691b25f12a9289f75a4429
     folder: qcportal
   - url: https://pypi.io/packages/source/q/qcfractalcompute/qcfractalcompute-{{ version }}.tar.gz
-    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    sha256: a334f8aec24f4aa0baae3a8f0844a0841378a0a1c7499fd4a10acb52c50db22b
     folder: qcfractalcompute
   - url: https://pypi.io/packages/source/q/qcfractal/qcfractal-{{ version }}.tar.gz
     sha256: 0c31f9b41224ba9da4ae5ae4fb75a3a7c46d8ca2bd3b57f7987313493321709c
     folder: qcfractal
   - url: https://pypi.io/packages/source/q/qcarchivetesting/qcarchivetesting-{{ version }}.tar.gz
-    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    sha256: fd943226dca9c8b311bb6a3ccd7da9c41828f2c1fc55c104616bd09020973da3
     folder: qcarchivetesting
 
 build:
