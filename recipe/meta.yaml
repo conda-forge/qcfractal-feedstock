@@ -46,7 +46,7 @@ outputs:
         - msgpack-python
         - requests
         - pyyaml
-        - pydantic <2.0
+        - pydantic >=1.10,<2.0
         - zstandard
         - qcelemental
         - tabulate
