@@ -53,6 +53,10 @@ outputs:
         - tqdm
         - pandas
         - pyjwt
+        - packaging
+        - typing_extensions
+        - python-dateutil
+        - pytz
     test:
       imports:
         - qcportal
@@ -146,8 +150,6 @@ outputs:
         - qcfractal ={{ version }}
         - qcengine
         - pytest
-        - pytest-cov
-        - codecov
     test:
       imports:
         - qcarchivetesting.helpers
