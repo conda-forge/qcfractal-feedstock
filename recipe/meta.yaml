@@ -48,7 +48,7 @@ outputs:
         - pyyaml
         - pydantic >=1.10,<3.0a0
         - zstandard
-        - qcelemental
+        - qcelemental <0.70a0
         - tabulate
         - tqdm
         - pandas
@@ -112,7 +112,7 @@ outputs:
         - python >=3.8
         - flask
         - flask-jwt-extended
-        - gunicorn
+        - waitress
         - bcrypt
         - sqlalchemy >=2.0
         - alembic
@@ -148,7 +148,7 @@ outputs:
       run:
         - python >=3.8
         - qcfractal ={{ version }}
-        - qcengine
+        - qcengine <0.70a0
         - pytest
     test:
       imports:
