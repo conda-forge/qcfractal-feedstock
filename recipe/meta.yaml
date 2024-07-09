@@ -1,5 +1,5 @@
 {% set name = "qcfractal" %}
-{% set version = "0.55" %}
+{% set version = "0.56" %}
 # pattern for unpublished commits {% set version = "0.50b13.post52+gbb2748c85" %}
 
 package:
@@ -13,16 +13,16 @@ source:
   #sha256: 81cdc093dda5e7739496088b70be7c3110fb691b4fdf22c7e3b58377450e2081
   # published tags.
   - url: https://pypi.io/packages/source/q/qcportal/qcportal-{{ version }}.tar.gz
-    sha256: cff92ea59cf796f56eb564e560d80e6a7833a44ceb2c902bd4554c4ae63292b2
+    sha256: 834e52951e1bae1780225631932323d79adb13319d18ec144399698c0d773de7
     folder: qcportal
   - url: https://pypi.io/packages/source/q/qcfractalcompute/qcfractalcompute-{{ version }}.tar.gz
-    sha256: 1e913877fcca3fd1ae57e23632203d85b57dabebb2531f8a8309a961d2706492
+    sha256: 90f25a9e68576a6db323a174ea5866b5d058dc3088170bf4521517daa36172ce
     folder: qcfractalcompute
   - url: https://pypi.io/packages/source/q/qcfractal/qcfractal-{{ version }}.tar.gz
-    sha256: ff62945a3c88fe7d3809d93cc92b46c233f6d40b5eb5c72849475e4ec9414604
+    sha256: 90bbeab6719b5a695d984cb4cc64c054d47ce594c6179e496f4078bdaf404190
     folder: qcfractal
   - url: https://pypi.io/packages/source/q/qcarchivetesting/qcarchivetesting-{{ version }}.tar.gz
-    sha256: 27a7fb429040d92ad095f632badc9889f76f164361bc9492228d1dde1a59998c
+    sha256: 27def27585697b3823a56740e0baa458360b235ce0cf7186f9f2f52641d133ab
     folder: qcarchivetesting
 
 build:
