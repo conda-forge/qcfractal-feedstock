@@ -26,7 +26,7 @@ source:
     folder: qcarchivetesting
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 outputs:
@@ -48,7 +48,7 @@ outputs:
         - pyyaml
         - pydantic >=1.10,<3.0a0
         - zstandard
-        - apsw
+        - apsw >=3.42
         - qcelemental <0.70a0
         - tabulate
         - tqdm
