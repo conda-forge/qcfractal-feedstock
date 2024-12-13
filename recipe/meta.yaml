@@ -35,12 +35,12 @@ outputs:
       script: python -m pip install --no-deps -vv ./qcportal
     requirements:
       host:
-        - python >=3.8
+        - python >=3.9
         - pip
         - setuptools >=61.0
         - versioningit
       run:
-        - python >=3.8
+        - python >=3.9
         - numpy
         - msgpack-python
         - requests
@@ -76,12 +76,12 @@ outputs:
       script: python -m pip install --no-deps -vv ./qcfractalcompute
     requirements:
       host:
-        - python >=3.8
+        - python >=3.9
         - pip
         - setuptools >=61.0
         - versioningit
       run:
-        - python >=3.8
+        - python >=3.9
         - qcportal ={{ version }}
         - parsl
     test:
@@ -103,12 +103,12 @@ outputs:
       script: python -m pip install --no-deps -vv ./qcfractal
     requirements:
       host:
-        - python >=3.8
+        - python >=3.9
         - pip
         - setuptools >=61.0
         - versioningit
       run:
-        - python >=3.8
+        - python >=3.9
         - flask
         - flask-jwt-extended
         - waitress
@@ -140,12 +140,12 @@ outputs:
       script: python -m pip install --no-deps -vv ./qcarchivetesting
     requirements:
       host:
-        - python >=3.8
+        - python >=3.9
         - pip
         - setuptools >=61.0
         - versioningit
       run:
-        - python >=3.8
+        - python >=3.9
         - qcfractal ={{ version }}
         - qcengine <0.70a0
         - pytest
