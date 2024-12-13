@@ -27,6 +27,7 @@ source:
 
 build:
   number: 0
+  noarch: python
 
 outputs:
   - name: qcportal
@@ -100,6 +101,7 @@ outputs:
 
   - name: qcfractal
     build:
+      noarch: python
       script: python -m pip install --no-deps -vv ./qcfractal
     requirements:
       host:
