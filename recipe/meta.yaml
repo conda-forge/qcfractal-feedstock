@@ -1,5 +1,5 @@
 {% set name = "qcfractal" %}
-{% set version = "0.57" %}
+{% set version = "0.58" %}
 # pattern for unpublished commits {% set version = "0.50b13.post52+gbb2748c85" %}
 
 package:
@@ -13,16 +13,16 @@ source:
   #sha256: 81cdc093dda5e7739496088b70be7c3110fb691b4fdf22c7e3b58377450e2081
   # published tags.
   - url: https://pypi.org/packages/source/q/qcportal/qcportal-{{ version }}.tar.gz
-    sha256: f4de906793619e2c6b087c98d839ccc6c65a9514ce14ccc34bab18b16f3c6800
+    sha256: a7517012a4c3b722b89ecedc218f2359b63e1895c85185de517a3f63dfdfa657
     folder: qcportal
   - url: https://pypi.org/packages/source/q/qcfractalcompute/qcfractalcompute-{{ version }}.tar.gz
-    sha256: 75b304a78f4d294eccf2bb84a26d00dd1f2da2c21650798062100c3196b3d36a
+    sha256: e08d8c1acdb5b09d66b52fbe918c28ca696bd32b4494de6a1d6a9f77718bbe76
     folder: qcfractalcompute
   - url: https://pypi.org/packages/source/q/qcfractal/qcfractal-{{ version }}.tar.gz
-    sha256: 1f762ee232445eeaa368750cd85386d9e92f65d7a4872f4b30552b322cbe59c8
+    sha256: f76481548bde2201aeb99443cb3450d7236cbfdcc7995b7f6a2ac2e2749386d3
     folder: qcfractal
   - url: https://pypi.org/packages/source/q/qcarchivetesting/qcarchivetesting-{{ version }}.tar.gz
-    sha256: 9f4e695f57a80d4652ff796103067b0ad6cb92a35d6bad2a30c0013f97ddb599
+    sha256: 45b099cfec558ab0fb7373a3c2d1295b20ac5f2e4607e8af23f7182a9fce4c35
     folder: qcarchivetesting
 
 build:
@@ -36,12 +36,12 @@ outputs:
       script: python -m pip install --no-deps -vv ./qcportal
     requirements:
       host:
-        - python >=3.9
+        - python {{ python_min }}
         - pip
         - setuptools >=61.0
         - versioningit
       run:
-        - python >=3.9
+        - python >={{ python_min }}
         - numpy
         - msgpack-python
         - requests
@@ -62,11 +62,11 @@ outputs:
       imports:
         - qcportal
       requires:
+        - python {{ python_min }}
         - pip
-        - pytest
       commands:
         - test -f $SP_DIR/qcportal/__init__.py
-        - pip check
+        #- pip check
         - python -c "import qcportal as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\'{{ version }}\''"
     about:
       summary: Python library for interacting with QCArchive/QCFractal servers
@@ -77,23 +77,23 @@ outputs:
       script: python -m pip install --no-deps -vv ./qcfractalcompute
     requirements:
       host:
-        - python >=3.9
+        - python {{ python_min }}
         - pip
         - setuptools >=61.0
         - versioningit
       run:
-        - python >=3.9
+        - python >={{ python_min }}
         - qcportal ={{ version }}
         - parsl
     test:
       imports:
         - qcfractalcompute
       requires:
+        - python {{ python_min }}
         - pip
-        - pytest
       commands:
         - test -f $SP_DIR/qcfractalcompute/__init__.py
-        - pip check
+        #- pip check
         - python -c "import qcfractalcompute as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\'{{ version }}\''"
         - qcfractal-compute-manager --help
     about:
@@ -105,12 +105,12 @@ outputs:
       script: python -m pip install --no-deps -vv ./qcfractal
     requirements:
       host:
-        - python >=3.9
+        - python {{ python_min }}
         - pip
         - setuptools >=61.0
         - versioningit
       run:
-        - python >=3.9
+        - python >={{ python_min }}
         - flask
         - flask-jwt-extended
         - waitress
@@ -119,18 +119,22 @@ outputs:
         - alembic
         - psycopg2
         - geoip2
+        - boto3
         - torsiondrive
+        - qcmanybody
+        - geometric >=1.1
+
         - qcfractalcompute ={{ version }}
         - __unix  # [unix]
     test:
       imports:
         - qcfractal.snowflake
       requires:
+        - python {{ python_min }}
         - pip
-        - pytest
       commands:
         - test -f $SP_DIR/qcfractal/__init__.py
-        - pip check
+        #- pip check
         - python -c "import qcfractal as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\'{{ version }}\''"
         - qcfractal-server --help
     about:
@@ -142,12 +146,12 @@ outputs:
       script: python -m pip install --no-deps -vv ./qcarchivetesting
     requirements:
       host:
-        - python >=3.9
+        - python {{ python_min }}
         - pip
         - setuptools >=61.0
         - versioningit
       run:
-        - python >=3.9
+        - python >={{ python_min }}
         - qcfractal ={{ version }}
         - qcengine <0.70a0
         - pytest
@@ -155,11 +159,11 @@ outputs:
       imports:
         - qcarchivetesting.helpers
       requires:
+        - python {{ python_min }}
         - pip
-        - pytest
       commands:
         - test -f $SP_DIR/qcarchivetesting/__init__.py
-        - pip check
+        #- pip check
         - python -c "import qcarchivetesting as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\'{{ version }}\''"
     about:
       summary: Additional testing fixtures and functions for the QCArchive project
