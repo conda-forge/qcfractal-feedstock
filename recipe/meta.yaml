@@ -36,12 +36,12 @@ outputs:
       script: python -m pip install --no-deps -vv ./qcportal
     requirements:
       host:
-        - python >=3.9
+        - python {{ python_min }}
         - pip
         - setuptools >=61.0
         - versioningit
       run:
-        - python >=3.9
+        - python >={{ python_min }}
         - numpy
         - msgpack-python
         - requests
@@ -62,8 +62,8 @@ outputs:
       imports:
         - qcportal
       requires:
+        - python {{ python_min }}
         - pip
-        - pytest
       commands:
         - test -f $SP_DIR/qcportal/__init__.py
         - pip check
@@ -77,20 +77,20 @@ outputs:
       script: python -m pip install --no-deps -vv ./qcfractalcompute
     requirements:
       host:
-        - python >=3.9
+        - python {{ python_min }}
         - pip
         - setuptools >=61.0
         - versioningit
       run:
-        - python >=3.9
+        - python >={{ python_min }}
         - qcportal ={{ version }}
         - parsl
     test:
       imports:
         - qcfractalcompute
       requires:
+        - python {{ python_min }}
         - pip
-        - pytest
       commands:
         - test -f $SP_DIR/qcfractalcompute/__init__.py
         - pip check
@@ -105,12 +105,12 @@ outputs:
       script: python -m pip install --no-deps -vv ./qcfractal
     requirements:
       host:
-        - python >=3.9
+        - python {{ python_min }}
         - pip
         - setuptools >=61.0
         - versioningit
       run:
-        - python >=3.9
+        - python >={{ python_min }}
         - flask
         - flask-jwt-extended
         - waitress
@@ -119,15 +119,19 @@ outputs:
         - alembic
         - psycopg2
         - geoip2
+        - boto3
         - torsiondrive
+        - qcmanybody
+        - geometric >=1.1
+
         - qcfractalcompute ={{ version }}
         - __unix  # [unix]
     test:
       imports:
         - qcfractal.snowflake
       requires:
+        - python {{ python_min }}
         - pip
-        - pytest
       commands:
         - test -f $SP_DIR/qcfractal/__init__.py
         - pip check
@@ -142,12 +146,12 @@ outputs:
       script: python -m pip install --no-deps -vv ./qcarchivetesting
     requirements:
       host:
-        - python >=3.9
+        - python {{ python_min }}
         - pip
         - setuptools >=61.0
         - versioningit
       run:
-        - python >=3.9
+        - python >={{ python_min }}
         - qcfractal ={{ version }}
         - qcengine <0.70a0
         - pytest
@@ -155,8 +159,8 @@ outputs:
       imports:
         - qcarchivetesting.helpers
       requires:
+        - python {{ python_min }}
         - pip
-        - pytest
       commands:
         - test -f $SP_DIR/qcarchivetesting/__init__.py
         - pip check
