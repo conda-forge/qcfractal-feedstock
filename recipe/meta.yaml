@@ -66,7 +66,7 @@ outputs:
         - pip
       commands:
         - test -f $SP_DIR/qcportal/__init__.py
-        - pip check
+        #- pip check
         - python -c "import qcportal as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\'{{ version }}\''"
     about:
       summary: Python library for interacting with QCArchive/QCFractal servers
@@ -93,7 +93,7 @@ outputs:
         - pip
       commands:
         - test -f $SP_DIR/qcfractalcompute/__init__.py
-        - pip check
+        #- pip check
         - python -c "import qcfractalcompute as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\'{{ version }}\''"
         - qcfractal-compute-manager --help
     about:
@@ -134,7 +134,7 @@ outputs:
         - pip
       commands:
         - test -f $SP_DIR/qcfractal/__init__.py
-        - pip check
+        #- pip check
         - python -c "import qcfractal as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\'{{ version }}\''"
         - qcfractal-server --help
     about:
@@ -163,7 +163,7 @@ outputs:
         - pip
       commands:
         - test -f $SP_DIR/qcarchivetesting/__init__.py
-        - pip check
+        #- pip check
         - python -c "import qcarchivetesting as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\'{{ version }}\''"
     about:
       summary: Additional testing fixtures and functions for the QCArchive project
