@@ -84,6 +84,7 @@ outputs:
         - python >={{ python_min }}
         - qcportal ={{ version }}
         - parsl
+        - __unix  # [unix]
     test:
       imports:
         - qcfractalcompute
