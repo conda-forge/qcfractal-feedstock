@@ -101,7 +101,6 @@ outputs:
 
   - name: qcfractal
     build:
-      noarch: python
       script: python -m pip install --no-deps -vv ./qcfractal
     requirements:
       host:
