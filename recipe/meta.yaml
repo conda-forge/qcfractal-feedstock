@@ -27,7 +27,6 @@ source:
 
 build:
   number: 0
-  noarch: python
 
 outputs:
   - name: qcportal
