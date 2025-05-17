@@ -17,23 +17,14 @@ Development: https://github.com/MolSSI/QCFractal
 
 Documentation: https://molssi.github.io/QCFractal/
 
-About qcportal
---------------
-
-
-
-Package license: 
-
-Summary: Python library for interacting with QCArchive/QCFractal servers
-
-About qcfractalcompute
+About qcarchivetesting
 ----------------------
 
 
 
 Package license: 
 
-Summary: Distributed worker package for QCArchive
+Summary: Additional testing fixtures and functions for the QCArchive project
 
 About qcfractal
 ---------------
@@ -44,14 +35,23 @@ Package license:
 
 Summary: Database and Web API for the QCArchive project
 
-About qcarchivetesting
+About qcfractalcompute
 ----------------------
 
 
 
 Package license: 
 
-Summary: Additional testing fixtures and functions for the QCArchive project
+Summary: Distributed worker package for QCArchive
+
+About qcportal
+--------------
+
+
+
+Package license: 
+
+Summary: Python library for interacting with QCArchive/QCFractal servers
 
 Current build status
 ====================
