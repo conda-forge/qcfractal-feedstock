@@ -1,5 +1,5 @@
 {% set name = "qcfractal" %}
-{% set version = "0.62" %}
+{% set version = "0.63" %}
 # pattern for unpublished commits {% set version = "0.50b13.post52+gbb2748c85" %}
 
 package:
@@ -13,16 +13,16 @@ source:
   #sha256: 81cdc093dda5e7739496088b70be7c3110fb691b4fdf22c7e3b58377450e2081
   # published tags.
   - url: https://pypi.org/packages/source/q/qcportal/qcportal-{{ version }}.tar.gz
-    sha256: fbd6c07a4d05609dce593a999c82f726627aca0d051475e20a8fd0d6afdf48c9
+    sha256: 84c7f2dae5c9b70b73a8c1867726b7a6c7dd62c99abb0349aedcb57bafbe52fa
     folder: qcportal
   - url: https://pypi.org/packages/source/q/qcfractalcompute/qcfractalcompute-{{ version }}.tar.gz
-    sha256: bf34de0a17491c62a76ad95030064c807e70b784189cfdb2d9a92a96ea328fe8
+    sha256: d993e5e8da4019d27ed5ff1916b3a739146465e1a303eb9b5c8bd15b51ecbcbb
     folder: qcfractalcompute
   - url: https://pypi.org/packages/source/q/qcfractal/qcfractal-{{ version }}.tar.gz
-    sha256: 9c401c73ffb606dc2fd371b359eb4e8781089741f68fdf75943a0f16defc8b9a
+    sha256: b1ae8b71a2bea2b6b139ca209f2a6a2144e59dbf3cd8caa6a7ca72ebba3216a7
     folder: qcfractal
   - url: https://pypi.org/packages/source/q/qcarchivetesting/qcarchivetesting-{{ version }}.tar.gz
-    sha256: 229b8c94fe645296227677d6495644df3cc5ef7741a9af1dfc31f0be32695829
+    sha256: ddc60e209e2923de45f8eb08212ba8bb2054910952241f043863ade51a389ed8
     folder: qcarchivetesting
 
 build:
@@ -37,7 +37,7 @@ outputs:
       host:
         - python {{ python_min }}
         - pip
-        - setuptools >=61.0
+        - setuptools >=78.0
         - versioningit
       run:
         - python >={{ python_min }}
@@ -78,7 +78,7 @@ outputs:
       host:
         - python {{ python_min }}
         - pip
-        - setuptools >=61.0
+        - setuptools >=78.0
         - versioningit
       run:
         - python >={{ python_min }}
@@ -107,7 +107,7 @@ outputs:
       host:
         - python {{ python_min }}
         - pip
-        - setuptools >=61.0
+        - setuptools >=78.0
         - versioningit
       run:
         - python >={{ python_min }}
@@ -149,7 +149,7 @@ outputs:
       host:
         - python {{ python_min }}
         - pip
-        - setuptools >=61.0
+        - setuptools >=78.0
         - versioningit
       run:
         - python >={{ python_min }}
