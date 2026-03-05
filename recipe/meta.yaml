@@ -45,7 +45,8 @@ outputs:
         - msgpack-python
         - requests
         - pyyaml
-        - pydantic >=1.10,<3.0a0
+        - pydantic >=2.11,<3.0a0
+        - pydantic-settings
         - zstandard
         - apsw >=3.42
         - qcelemental >=0.30,<0.70a0
