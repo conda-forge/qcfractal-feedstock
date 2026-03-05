@@ -35,12 +35,12 @@ outputs:
       script: python -m pip install --no-deps -vv ./qcportal
     requirements:
       host:
-        - python {{ python_min }}
+        - python {{ python_min }},<3.14.0
         - pip
         - setuptools >=78.0
         - versioningit
       run:
-        - python >={{ python_min }}
+        - python >={{ python_min }},<3.14.0
         - numpy
         - msgpack-python
         - requests
@@ -48,7 +48,7 @@ outputs:
         - pydantic >=1.10,<3.0a0
         - zstandard
         - apsw >=3.42
-        - qcelemental <0.70a0
+        - qcelemental >=0.30,<0.70a0
         - tabulate
         - tqdm
         - pandas
@@ -61,7 +61,7 @@ outputs:
       imports:
         - qcportal
       requires:
-        - python {{ python_min }}
+        - python {{ python_min }},<3.14.0
         - pip
       commands:
         - test -f $SP_DIR/qcportal/__init__.py
@@ -76,12 +76,12 @@ outputs:
       script: python -m pip install --no-deps -vv ./qcfractalcompute
     requirements:
       host:
-        - python {{ python_min }}
+        - python {{ python_min }},<3.14.0
         - pip
         - setuptools >=78.0
         - versioningit
       run:
-        - python >={{ python_min }}
+        - python >={{ python_min }},<3.14.0
         - qcportal ={{ version }}
         - parsl
         - __unix  # [unix]
@@ -89,7 +89,7 @@ outputs:
       imports:
         - qcfractalcompute
       requires:
-        - python {{ python_min }}
+        - python {{ python_min }},<3.14.0
         - pip
       commands:
         - test -f $SP_DIR/qcfractalcompute/__init__.py
@@ -105,12 +105,12 @@ outputs:
       script: python -m pip install --no-deps -vv ./qcfractal
     requirements:
       host:
-        - python {{ python_min }}
+        - python {{ python_min }},<3.14.0
         - pip
         - setuptools >=78.0
         - versioningit
       run:
-        - python >={{ python_min }}
+        - python >={{ python_min }},<3.14.0
         - flask
         - flask-jwt-extended
         - flask-cors
@@ -131,7 +131,7 @@ outputs:
       imports:
         - qcfractal.snowflake
       requires:
-        - python {{ python_min }}
+        - python {{ python_min }},<3.14.0
         - pip
       commands:
         - test -f $SP_DIR/qcfractal/__init__.py
@@ -147,21 +147,21 @@ outputs:
       script: python -m pip install --no-deps -vv ./qcarchivetesting
     requirements:
       host:
-        - python {{ python_min }}
+        - python {{ python_min }},<3.14.0
         - pip
         - setuptools >=78.0
         - versioningit
       run:
-        - python >={{ python_min }}
+        - python >={{ python_min }},<3.14.0
         - qcfractal ={{ version }}
-        - qcengine <0.70a0
+        - qcengine >=0.34,<0.70a0
         - pytest
         - deepdiff
     test:
       imports:
         - qcarchivetesting.helpers
       requires:
-        - python {{ python_min }}
+        - python {{ python_min }},<3.14.0
         - pip
       commands:
         - test -f $SP_DIR/qcarchivetesting/__init__.py
