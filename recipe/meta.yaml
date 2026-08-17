@@ -12,16 +12,16 @@ source:
   #git_rev: bb2748c8534b267e33f894ef71a2d9a6da50c5af
   #sha256: 81cdc093dda5e7739496088b70be7c3110fb691b4fdf22c7e3b58377450e2081
   # published tags.
-  - url: https://pypi.org/packages/source/q/qcportal/qcportal-{{ version }}.tar.gz
+  - url: https://files.pythonhosted.org/packages/source/q/qcportal/qcportal-{{ version }}.tar.gz
     sha256: b29b3b4ac8b6d961595c74810e189e0636f8d1e7c4a867cf331ed7c6552784ce
     folder: qcportal
-  - url: https://pypi.org/packages/source/q/qcfractalcompute/qcfractalcompute-{{ version }}.tar.gz
+  - url: https://files.pythonhosted.org/packages/source/q/qcfractalcompute/qcfractalcompute-{{ version }}.tar.gz
     sha256: 547c88dfc6fcd07c687239c34dcaefcc83831c31e3430500ee8a3ee363015611
     folder: qcfractalcompute
-  - url: https://pypi.org/packages/source/q/qcfractal/qcfractal-{{ version }}.tar.gz
+  - url: https://files.pythonhosted.org/packages/source/q/qcfractal/qcfractal-{{ version }}.tar.gz
     sha256: 9f2ba22060dc86e37b3262c020d70f8ee049d4a38ed2d7643c9e3735fe003866
     folder: qcfractal
-  - url: https://pypi.org/packages/source/q/qcarchivetesting/qcarchivetesting-{{ version }}.tar.gz
+  - url: https://files.pythonhosted.org/packages/source/q/qcarchivetesting/qcarchivetesting-{{ version }}.tar.gz
     sha256: 0d03ec3d2d4cbd42b1db3a5a3002e8fc3bcfe5e38cd6a411805c49dd8b5fe4d1
     folder: qcarchivetesting
 
