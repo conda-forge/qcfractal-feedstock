@@ -1,5 +1,5 @@
 {% set name = "qcfractal" %}
-{% set version = "0.70" %}
+{% set version = "0.71" %}
 # pattern for unpublished commits {% set version = "0.50b13.post52+gbb2748c85" %}
 
 package:
@@ -13,16 +13,16 @@ source:
   #sha256: 81cdc093dda5e7739496088b70be7c3110fb691b4fdf22c7e3b58377450e2081
   # published tags.
   - url: https://files.pythonhosted.org/packages/source/q/qcportal/qcportal-{{ version }}.tar.gz
-    sha256: b29b3b4ac8b6d961595c74810e189e0636f8d1e7c4a867cf331ed7c6552784ce
+    sha256: 0d595b731619173ef89383e42b1482b420cc1d84305a415b8cde11e1f413d612
     folder: qcportal
   - url: https://files.pythonhosted.org/packages/source/q/qcfractalcompute/qcfractalcompute-{{ version }}.tar.gz
-    sha256: 547c88dfc6fcd07c687239c34dcaefcc83831c31e3430500ee8a3ee363015611
+    sha256: f03f456b5f03ab6072858ec09835df90464e3cda4907035d3a54dd669bf2a154
     folder: qcfractalcompute
   - url: https://files.pythonhosted.org/packages/source/q/qcfractal/qcfractal-{{ version }}.tar.gz
-    sha256: 9f2ba22060dc86e37b3262c020d70f8ee049d4a38ed2d7643c9e3735fe003866
+    sha256: 306037412174ee3b84c2223560abcbf322385b28af76f60a756c7f5aab524aac
     folder: qcfractal
   - url: https://files.pythonhosted.org/packages/source/q/qcarchivetesting/qcarchivetesting-{{ version }}.tar.gz
-    sha256: 0d03ec3d2d4cbd42b1db3a5a3002e8fc3bcfe5e38cd6a411805c49dd8b5fe4d1
+    sha256: 2d93ea424634646c17c9d776f50636161f23c3c0bbd1ed0de5acb68ef2c03880
     folder: qcarchivetesting
 
 build:
@@ -115,7 +115,7 @@ outputs:
         - flask-jwt-extended
         - flask-cors
         - waitress
-        - bcrypt
+        - bcrypt >=5.0
         - sqlalchemy >=2.0
         - alembic
         - psycopg2
